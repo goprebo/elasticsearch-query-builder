@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'elasticsearch/query_builder/version'
+require 'elastic_search/query_builder/version'
 require_relative '../core_extensions/core_extensions.rb'
 
 module ElasticSearch

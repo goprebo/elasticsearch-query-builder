@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'elasticsearch/query_builder'
+require 'elastic_search/query_builder'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
