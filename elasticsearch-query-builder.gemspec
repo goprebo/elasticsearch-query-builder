@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'elasticsearch/query_builder/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'elasticsearch-query_builder'
+  spec.name          = 'elasticsearch-query-builder'
   spec.version       = Elasticsearch::QueryBuilder::VERSION
   spec.authors       = ['Kickser']
   spec.email         = ['support@goprebo.com']
