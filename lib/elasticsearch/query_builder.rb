@@ -31,18 +31,23 @@ module ElasticSearch
       end
     end
 
-    def initialize(opts: {}, function_score: false)
+    def initialize(opts: {}, client: nil, function_score: false)
       @opts = opts
       @function_score = function_score
+      @client = client
     end
 
     def to_json(*_args)
       @opts.to_h
     end
 
+    def results
+      client&.search(opts)&.results
+    end
+
     private
 
-    attr_accessor :opts
+    attr_accessor :opts, :client
 
     def init_path(path)
       return if path.size == 1 || initialized?(path)
