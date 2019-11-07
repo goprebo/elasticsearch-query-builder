@@ -2,10 +2,8 @@
 
 module CoreExtensions
   module Object
+    # Object extension to include .present? and .not_present? method
     module PresenceCheck
-      # Converts in place all the keys to string
-      #
-      # @return [Hash]
       def present?
         !not_present?
       end
