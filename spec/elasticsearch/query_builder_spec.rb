@@ -19,7 +19,7 @@ RSpec.describe ElasticSearch::QueryBuilder do
                   }
                 }
   let(:function_score_path) { %i[query function_score] }
-  let(:days_ago) { 3.days.ago }
+  let(:days_ago) { 3 }
   let(:must_clause) { { range: { last_activity_at: { gte: days_ago } } } }
   let(:must_not_clause) { { term: { hidden: true } } }
   let(:should_clause) { { term: { hidden: true } } }
@@ -30,15 +30,15 @@ RSpec.describe ElasticSearch::QueryBuilder do
   subject { described_class.new(function_score: function_score) }
   describe '#exclude_opposite && #exclude_duplicated' do
     context 'with function_score: false && opposite included with must_not' do
-      let(:subject) { described_class.new(client: client, function_score: function_score) }
+      let(:subject) { described_class.new(function_score: function_score) }
       before do
         subject.must([must_clause])
         subject.must_not([must_clause])
         @opts = subject.send(:opts)
       end
       it 'should persists only opposite' do
-        expect(@opts.dig(*methods[:must]).present?).to eq false
-        expect(@opts.dig(*methods[:must_not]).present?).to eq true
+        expect(@opts.dig(*methods[:must]).first.present?).to eq false
+        expect(@opts.dig(*methods[:must_not]).first.present?).to eq true
       end
     end
 
@@ -51,7 +51,7 @@ RSpec.describe ElasticSearch::QueryBuilder do
         @opts = subject.send(:opts)
       end
       it 'should persists only opposite' do
-        expect(@opts.dig(*methods[:must_not]).present?).to eq false
+        expect(@opts.dig(*methods[:must_not]).first.present?).to eq false
         expect(@opts.dig(*methods[:must]).present?).to eq true
       end
       it 'should not repeat must clause' do

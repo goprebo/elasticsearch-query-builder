@@ -9,21 +9,20 @@ Gem::Specification.new do |spec|
   spec.version       = Elasticsearch::QueryBuilder::VERSION
   spec.authors       = ['Kickser']
   spec.email         = ['support@goprebo.com']
-
   spec.summary       = 'ElasticSearch query builder with clauses as methods'
   spec.homepage      = 'TODO: Put your gemss website or public repo URL here.'
   spec.license       = 'MIT'
 
   spec.metadata['allowed_push_host'] = 'TODO: Set to http://mygemserver.com'
 
-  spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'TODO: Put your gems public repo URL here.'
-  spec.metadata['changelog_uri'] = 'TODO: Put your gems CHANGELOG.md URL here.'
+  spec.metadata['homepage_uri'] = 'https://bitbucket.org/kickser/elasticsearch-query_builder'
+  spec.metadata['source_code_uri'] = 'https://bitbucket.org/kickser/elasticsearch-query_builder'
+  spec.metadata['changelog_uri'] = 'https://bitbucket.org/kickser/elasticsearch-query_builder'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
-    `git ls-files -z`.split('\x0').reject { |f| f.match(%r{^(test|spec|features)/}) }
+    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }

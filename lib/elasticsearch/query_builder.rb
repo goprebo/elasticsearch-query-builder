@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-require "elasticsearch/query_builder/version"
+require 'elasticsearch/query_builder/version'
+require_relative '../core_extensions/core_extensions.rb'
 
 module ElasticSearch
   class QueryBuilder
@@ -19,7 +20,7 @@ module ElasticSearch
     }.freeze
     METHODS.each do |method, path|
       define_method(method) do |body|
-        return self if body.blank?
+        return self if body.not_present?
 
         path.unshift(:query, :function_score) if @function_score && %i[functions query].any?(path.first)
 
@@ -40,7 +41,7 @@ module ElasticSearch
     end
 
     private
-    
+
     attr_accessor :opts
 
     def init_path(path)
@@ -94,4 +95,3 @@ module ElasticSearch
     end
   end
 end
-
