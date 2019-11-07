@@ -6,15 +6,13 @@ require 'elastic_search/query_builder/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'elasticsearch-query-builder'
-  spec.version       = Elasticsearch::QueryBuilder::VERSION
+  spec.version       = ElasticSearch::QueryBuilder::VERSION
   spec.authors       = ['Kickser']
   spec.email         = ['support@goprebo.com']
   spec.summary       = 'ElasticSearch query builder with clauses as methods'
   spec.homepage      = 'TODO: Put your gemss website or public repo URL here.'
   spec.license       = 'MIT'
-
-  spec.metadata['allowed_push_host'] = 'TODO: Set to http://mygemserver.com'
-
+  spec.homepage      = 'https://bitbucket.org/kickser/elasticsearch-query_builder'
   spec.metadata['homepage_uri'] = 'https://bitbucket.org/kickser/elasticsearch-query_builder'
   spec.metadata['source_code_uri'] = 'https://bitbucket.org/kickser/elasticsearch-query-builder'
   spec.metadata['changelog_uri'] = 'https://bitbucket.org/kickser/elasticsearch-query-builder'
