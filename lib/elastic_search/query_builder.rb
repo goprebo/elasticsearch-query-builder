@@ -22,11 +22,13 @@ module ElasticSearch
       define_method(method) do |body|
         return self if body.not_present?
 
-        path.unshift(:query, :function_score) if @function_score && %i[functions query].any?(path.first)
+        internal_path = path
+        internal_path = %i[query function_score] + path if @function_score &&
+                                                           %i[functions query].any?(path.first)
 
-        init_path(path)
-        exclude_opposite(path, body)
-        add_clause(path, body)
+        init_path(internal_path)
+        exclude_opposite(internal_path, body)
+        add_clause(internal_path, body)
         self
       end
     end
@@ -42,6 +44,8 @@ module ElasticSearch
     end
 
     def results
+      raise 'client: should be set in order to fetch results' unless client
+
       client&.search(opts)&.results
     end
 

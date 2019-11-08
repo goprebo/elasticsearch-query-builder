@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Kickser']
   spec.email         = ['support@goprebo.com']
   spec.summary       = 'ElasticSearch query builder with clauses as methods'
-  spec.homepage      = 'TODO: Put your gemss website or public repo URL here.'
   spec.license       = 'MIT'
   spec.homepage      = 'https://bitbucket.org/kickser/elasticsearch-query_builder'
   spec.metadata['homepage_uri'] = 'https://bitbucket.org/kickser/elasticsearch-query_builder'
