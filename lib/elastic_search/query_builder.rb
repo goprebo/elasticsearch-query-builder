@@ -14,7 +14,7 @@ module ElasticSearch
       ids: %i[query terms _id],
       size: [:size],
       fields: %i[_source],
-      range: %i[bool must range],
+      range: %i[query bool must range],
       sort: %i[sort],
       aggs: [:aggs]
     }.freeze
