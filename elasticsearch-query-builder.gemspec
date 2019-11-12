@@ -7,14 +7,14 @@ require 'elastic_search/query_builder/version'
 Gem::Specification.new do |spec|
   spec.name          = 'elasticsearch-query-builder'
   spec.version       = ElasticSearch::QueryBuilder::VERSION
-  spec.authors       = ['Kickser']
-  spec.email         = ['support@goprebo.com']
-  spec.summary       = 'ElasticSearch query builder with clauses as methods'
+  spec.authors       = ['Kickser', 'Federico Farina', 'Alejo Zárate', 'Nicolás Vázquez']
+  spec.email         = ['support@goprebo.com', 'federico@goprebo.com', 'ale@goprebo.com', 'nico@goprebo.com']
+  spec.summary       = 'Ruby gem to build complex ElasticSearch queries with clauses as methods'
   spec.license       = 'MIT'
-  spec.homepage      = 'https://bitbucket.org/kickser/elasticsearch-query_builder'
-  spec.metadata['homepage_uri'] = 'https://bitbucket.org/kickser/elasticsearch-query_builder'
-  spec.metadata['source_code_uri'] = 'https://bitbucket.org/kickser/elasticsearch-query-builder'
-  spec.metadata['changelog_uri'] = 'https://bitbucket.org/kickser/elasticsearch-query-builder'
+  spec.homepage      = 'https://github.com/goprebo/elasticsearch-query-builder'
+  spec.metadata['homepage_uri'] = 'https://github.com/goprebo/elasticsearch-query-builder'
+  spec.metadata['source_code_uri'] = 'https://github.com/goprebo/elasticsearch-query-builder'
+  spec.metadata['changelog_uri'] = 'https://github.com/goprebo/elasticsearch-query-builder'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
