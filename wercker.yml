@@ -6,5 +6,5 @@ build:
             code: gem install bundler
         - bundle-install
         - script:
-            name: rake
-            code: rake
+            name: Tests
+            code: bundle exec rake
