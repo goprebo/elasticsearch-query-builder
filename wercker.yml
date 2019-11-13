@@ -1,8 +1,9 @@
-# ruby:2.2.2
-box: ruby
+box: ruby:2.5
 build:
     steps:
-        - gem install bundler:2.0.2
+        - script:
+            name: Bundler update
+            code: gem install bundler
         - bundle-install
         - script:
             name: rake
