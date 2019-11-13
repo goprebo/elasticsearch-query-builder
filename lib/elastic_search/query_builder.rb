@@ -20,7 +20,7 @@ module ElasticSearch
     }.freeze
     METHODS.each do |method, path|
       define_method(method) do |body|
-        return self if body.not_present?
+        return self if body.not_present? || (!@function_score && path.first == :functions)
 
         internal_path = path
         internal_path = %i[query function_score] + path if @function_score &&

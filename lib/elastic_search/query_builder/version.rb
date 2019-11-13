@@ -2,6 +2,6 @@
 
 module ElasticSearch
   class QueryBuilder
-    VERSION = '0.1.7'
+    VERSION = '0.5'
   end
 end

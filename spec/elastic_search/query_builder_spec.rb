@@ -26,6 +26,7 @@ RSpec.describe ElasticSearch::QueryBuilder do
   let(:ids_clause) { Array(1..5) }
   let(:size_clause) { 10 }
   let(:sort_clause) { [popularity: { order: :desc }] }
+  let(:functions_clause) { { script_score: { script: "1 - ( 1.0 / ( doc['popularity'].value == 0 ? 1 : doc['popularity'].value ))" }, weight: 1 } }
   let(:function_score) { false }
   subject { described_class.new(function_score: function_score) }
   describe '#exclude_opposite && #exclude_duplicated' do
@@ -212,6 +213,19 @@ RSpec.describe ElasticSearch::QueryBuilder do
         expect(@opts.dig(*methods[:ids]).present?).to eq false
         expect(@opts.dig(*function_score_path, *methods[:ids]).present?).to eq true
         expect(@opts.dig(*function_score_path, *methods[:ids])).to eq ids_clause
+      end
+    end
+  end
+
+  describe '#functions' do
+    context 'with function_score: false' do
+      before do
+        subject.must([must_clause])
+        subject.functions([functions_clause])
+        @opts = subject.send(:opts)
+      end
+      it 'should not have functions path built' do
+        expect(@opts.dig(*methods[:functions]).present?).to eq false
       end
     end
   end
