@@ -1,1 +1,1 @@
-repo_token: ${{ secrets.coveralls_repo_token }}
+repo_token: ENV['coveralls_repo_token']
