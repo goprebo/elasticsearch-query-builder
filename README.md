@@ -1,4 +1,5 @@
 [![wercker status](https://app.wercker.com/status/a7c6d2e4c455ff2542fe2a93a2d9f496/s/master "wercker status")](https://app.wercker.com/project/byKey/a7c6d2e4c455ff2542fe2a93a2d9f496)
+[![Coverage Status](https://coveralls.io/repos/github/goprebo/elasticsearch-query-builder/badge.svg?branch=HEAD)](https://coveralls.io/github/goprebo/elasticsearch-query-builder?branch=HEAD)
 [![GitHub issues](https://img.shields.io/github/issues/goprebo/elasticsearch-query-builder)](https://github.com/goprebo/elasticsearch-query-builder/issues)
 [![GitHub license](https://img.shields.io/github/license/goprebo/elasticsearch-query-builder)](https://github.com/goprebo/elasticsearch-query-builder/blob/master/LICENSE.txt)
 
