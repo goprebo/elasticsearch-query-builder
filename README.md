@@ -2,7 +2,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/goprebo/elasticsearch-query-builder)](https://github.com/goprebo/elasticsearch-query-builder/issues)
 [![GitHub license](https://img.shields.io/github/license/goprebo/elasticsearch-query-builder)](https://github.com/goprebo/elasticsearch-query-builder/blob/master/LICENSE.txt)
 
-# Ruby Elasticsearch::QueryBuilder
+# Ruby ElasticSearch::QueryBuilder
 
 Ruby gem for building complex ElasticSearch queries using clauses as methods. Supports query and function_score builders, as well as clients to fetch results.
 
