@@ -2,6 +2,7 @@
 box: ruby
 build:
     steps:
+        - gem install bundler:2.0.2
         - bundle-install
         - script:
             name: rake
