@@ -5,6 +5,8 @@ build:
             name: Bundler update
             code: gem install bundler
         - bundle-install
+        - name: Coveralls GitHub Action
+            uses: coverallsapp/github-action@v1.0.1
         - script:
             name: Tests
             code: bundle exec rake

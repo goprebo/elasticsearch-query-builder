@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'coveralls'
+Coveralls.wear!
+
 require 'bundler/setup'
 require 'elastic_search/query_builder'
 
