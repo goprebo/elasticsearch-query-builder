@@ -1,0 +1,8 @@
+# ruby:2.2.2
+box: ruby
+build:
+    steps:
+        - bundle-install
+        - script:
+            name: rake
+            code: rake
