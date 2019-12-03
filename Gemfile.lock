@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    elasticsearch-query-builder (0.5)
+    elasticsearch-query-builder (0.6)
 
 GEM
   remote: https://rubygems.org/

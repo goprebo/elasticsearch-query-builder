@@ -33,8 +33,9 @@ module ElasticSearch
       end
     end
 
-    def initialize(opts: {}, client: nil, function_score: false)
+    def initialize(opts: {}, mopts: [], client: nil, function_score: false)
       @opts = opts
+      @mopts = mopts
       @function_score = function_score
       @client = client
     end
@@ -49,9 +50,21 @@ module ElasticSearch
       client&.search(opts)&.results
     end
 
+    def multisearch_results
+      raise 'client: should be set in order to fetch multisearch_results' unless client
+
+      client&.msearch(mopts)&.results
+    end
+
+    def add_to_multisearch(index: {})
+      mopts << index
+      mopts << opts
+      @opts = {}
+    end
+
     private
 
-    attr_accessor :opts, :client
+    attr_accessor :opts, :mopts, :client
 
     def init_path(path)
       return if path.size == 1 || initialized?(path)
