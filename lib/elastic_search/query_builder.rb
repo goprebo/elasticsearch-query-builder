@@ -53,7 +53,7 @@ module ElasticSearch
     def multisearch_results
       raise 'client: should be set in order to fetch multisearch_results' unless client
 
-      client&.msearch(mopts)&.results
+      client&.msearch(body: mopts)&.dig('responses')
     end
 
     def add_to_multisearch(index: {})
