@@ -48,7 +48,7 @@ module ElasticSearch
     def results
       raise 'client: should be set in order to fetch results' unless client
 
-      client&.search(opts, options: options)&.results
+      client&.search(opts, options: @options)&.results
     end
 
     def multisearch_results
