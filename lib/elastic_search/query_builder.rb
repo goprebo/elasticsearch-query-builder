@@ -48,7 +48,7 @@ module ElasticSearch
     def results
       raise 'client: should be set in order to fetch results' unless client
 
-      client&.search(opts, options: @options)&.results
+      client&.search(opts, options: options)&.results
     end
 
     def multisearch_results
@@ -65,7 +65,7 @@ module ElasticSearch
 
     private
 
-    attr_accessor :opts, :mopts, :client
+    attr_accessor :opts, :mopts, :client, :options
 
     def init_path(path)
       return if path.size == 1 || initialized?(path)
