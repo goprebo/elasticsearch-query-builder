@@ -33,11 +33,12 @@ module ElasticSearch
       end
     end
 
-    def initialize(opts: {}, mopts: [], client: nil, function_score: false)
+    def initialize(opts: {}, mopts: [], client: nil, function_score: false, options: {})
       @opts = opts
       @mopts = mopts
       @function_score = function_score
       @client = client
+      @options = options
     end
 
     def to_json(*_args)
@@ -47,7 +48,7 @@ module ElasticSearch
     def results
       raise 'client: should be set in order to fetch results' unless client
 
-      client&.search(opts)&.results
+      client&.search(opts, options: options)&.results
     end
 
     def multisearch_results
