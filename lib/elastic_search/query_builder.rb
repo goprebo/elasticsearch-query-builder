@@ -106,7 +106,7 @@ module ElasticSearch
     def add_clause(path, body)
       return if added?(path, body)
 
-      body = body.compact
+      body = body.compact if body.respond_to?(:compact)
       if !root_path?(path) && body.is_a?(Array)
         existing_content = opts.dig(*path) || []
         opts.dig(*path.first(path.size - 1)).store(path.last, body + existing_content)
